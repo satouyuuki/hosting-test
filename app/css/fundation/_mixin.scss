@@ -1,0 +1,113 @@
+// media query
+$breakpoints: (
+  'md': 'screen and (min-width: 768px)',
+);
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// font size
+@mixin fs10($color: $white) {
+  font-size: 10px;
+  line-height: 15px;
+  color: $color;
+}
+@mixin fs12($color: $white) {
+  font-size: 12px;
+  line-height: 18px;
+  color: $color;
+}
+@mixin fs14($color: $white) {
+  font-size: 14px;
+  line-height: 1.5;
+  color: $color;
+  @include mq() {
+    font-size: 16px;
+  }
+}
+@mixin fs10-fixed($color: $white) {
+  font-size: 10px;
+  line-height: 15px;
+  color: $color;
+}
+@mixin fs12-fixed($color: $white) {
+  font-size: 12px;
+  line-height: 1.5;
+  color: $color;
+}
+@mixin fs13-fixed($color: $white) {
+  font-size: 13px;
+  line-height: 1.5;
+  color: $color;
+}
+@mixin fs14-fixed($color: $white) {
+  font-size: 14px;
+  line-height: 1.5;
+  color: $color;
+}
+@mixin fs15-fixed($color: $white) {
+  font-size: 15px;
+  line-height: 1.5;
+  color: $color;
+}
+@mixin fs16-fixed($color: $white) {
+  font-size: 16px;
+  line-height: 1.5;
+  color: $color;
+}
+@mixin fs48-fixed($color: $white) {
+  font-size: 48px;
+  line-height: 1.5;
+  color: $color;
+}
+@mixin fs16($color: $white) {
+  font-size: 16px;
+  line-height: 1.5;
+  color: $color;
+  @include mq() {
+    font-size: 18px;
+  }
+}
+@mixin fs21($color: $white) {
+  font-size: 21px;
+  line-height: 1.5;
+  color: $color;
+  @include mq() {
+    font-size: 32px;
+  }
+}
+@mixin fs22-main($color: $white) {
+  font-size: 22px;
+  line-height: 2;
+  color: $color;
+  @include mq() {
+    font-size: 42px;
+  }
+}
+@mixin fs20-sub($color: $white) {
+  font-size: 20px;
+  line-height: 1.5;
+  color: $color;
+  @include mq() {
+    font-size: 22px;
+  }
+}
+@mixin fs35($color: $white) {
+  font-size: 35px;
+  line-height: 1.5;
+  color: $color;
+  @include mq() {
+    font-size: 68px;
+  }
+}
+@mixin fs37($color: $white) {
+  font-size: 37px;
+  line-height: 1.5;
+  color: $color;
+  @include mq() {
+    font-size: 44px;
+  }
+}

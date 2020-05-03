@@ -1,0 +1,65 @@
+
+.scroll-anime {
+  @include fs12-fixed();
+  writing-mode: vertical-rl;
+  position: absolute;
+  bottom: -96px;
+  left: 50%;
+  z-index: 1;
+  display: inline-block;
+  transform: translate(0, -50%);
+  padding-bottom: 50px;
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 30px;
+    background: $white;
+    vertical-align: sub;
+    margin-top: 15px;
+    position: relative;
+    right: -3px;
+    animation: sdb2 2s infinite;
+  }
+}
+.scroll-anime__text {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(-45deg);
+  animation: sdb 2s infinite;
+  &:nth-child(2) {
+    bottom: 40px;
+  }
+}
+@keyframes sdb {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+@keyframes sdb2 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 30px);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,44 @@
+/*
+Theme Name:伊藤忠リーテイルリンク
+Theme URI:
+Author: the
+Author URI:
+*/
+
+// google font
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap&subset=japanese');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700&display=swap&subset=latin-ext,vietnamese');
+
+@import "fundation/_variable";
+@import "fundation/_reset";
+@import "fundation/_base";
+@import "fundation/_mixin";
+
+@import "layout/_header";
+@import "layout/_footer";
+
+
+@import "object/component/_button";
+@import "object/component/_arrow";
+@import "object/component/_topScroll";
+@import "object/component/_scroll";
+@import "object/component/_accordion";
+@import "object/component/_dropdown";
+
+@import "object/project/_card";
+@import "object/project/_mainVisual";
+@import "object/project/_section";
+@import "object/project/_flex";
+@import "object/project/_message";
+@import "object/project/_float";
+@import "object/project/_imgBack";
+@import "object/project/_font";
+
+@import "object/page/_topicsList";
+
+@import "object/utility/_mgb";
+@import "object/utility/_mgt";
+@import "object/utility/_pdt";
+@import "object/utility/_pdb";
+@import "object/utility/_colors";
+@import "object/utility/_sp-pc";

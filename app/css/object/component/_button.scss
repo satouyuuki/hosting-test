@@ -1,0 +1,76 @@
+.button {
+  @include fs14-fixed();
+  display: block;
+  border: 1px solid $white;
+  background: transparent;
+  padding: 15px 10px;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+
+  &::after {
+    content: '';
+    background-image: url('../assets/images/white_arrow.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    width: 20px;
+    height: 10px;
+  }
+  &--reverse,
+  &:hover {
+    border: 1px solid $blue;
+    background: $white;
+    color: $blue;
+    &::after {
+      background-image: url('../assets/images/blue_arrow.png');
+    }
+  }
+  &--reverse {
+    letter-spacing: .1px;
+
+    &:hover {
+      border: 1px solid $white;
+      background: $blue;
+      color: $white;
+      &::after {
+        background-image: url('../assets/images/white_arrow.png');
+      }
+    }
+  }
+  &--w160 {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    font-weight:100;
+  }
+  &--mini {
+    padding: 12px 10px;
+  }
+  @include mq() {
+    &--w160 {
+      width: 160px;
+      margin: 0 60px 0 auto;
+      padding: 10px;
+    }
+    &--reverse {
+      width: 380px;
+    }
+  }
+}
+.button-group {
+}
+.button-float {
+  @include mq() {
+    position: relative;
+    top: -55px;
+  }
+}
+
+.button2 {
+  @include fs14;
+}

@@ -1,0 +1,11 @@
+.float {
+  margin: 0 30px;
+  position: relative;
+  top: 20px;
+  z-index: 2;
+  @include mq() {
+    margin: 0 8%;
+    top: 120px;
+    width: 35%;
+  }
+}

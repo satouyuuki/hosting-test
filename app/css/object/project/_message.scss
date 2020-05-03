@@ -1,0 +1,53 @@
+.message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &__item {
+    padding: 17px 10px;
+    .sp-show {
+      display: block;
+      @include mq() {
+        display: none;
+      }
+    }
+    &:nth-child(1) {
+      @include fs14();
+      background: $emerald-green;
+      width: 80px;
+      text-align: center;
+    }
+    &:nth-child(2) {
+      @include fs14($black);
+      background: $grey;
+      flex: 1;
+      text-align: start;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__date {
+    display: block;
+  }
+  // &__text {
+  //   p {
+  //     white-space: nowrap;
+  //     overflow: hidden;
+  //     text-overflow: ellipsis;
+  //   }
+  // }
+  @include mq() {
+    &__item {
+      padding: 20px;
+      &:nth-child(1) {
+        width: 160px;
+      }
+      &:nth-child(2) {
+      }
+    }
+    &__date {
+      display: inline-block;
+      padding: 0 40px;
+    }
+  }
+}

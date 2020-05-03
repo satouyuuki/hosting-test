@@ -1,0 +1,155 @@
+.section {
+  text-align: center;
+  background-color: $white;
+
+  &--wrapper {
+    padding: 20px;
+  }
+  &--wrapper-02 {
+    padding-bottom: 40px;
+  }
+  &__inner {
+    background: rgba($blue, .9);
+    text-align: start;
+    padding: 40px;
+
+    &--mini {
+      padding: 40px 30px;
+    }
+    &--mini-02 {
+      padding: 37px 30px;
+    }
+  }
+  &__border {
+    border: 1px solid $white;
+    padding: 20px 20px 40px;
+  }
+  &__heading-2 {
+    @include fs35($blue);
+    font-family: $maven;
+    font-weight: 100;
+    &--ourbusiness {
+      line-height: 1.5;
+      display: inline-block;
+      span {
+        display: block;
+        @include mq() {
+          text-align: left;
+        }
+      }
+    }
+    &--mini {
+      @include fs37($white);
+      line-height: 1;
+    }
+  }
+  &__heading-4 {
+    text-align: center;
+  }
+  &__sub {
+    @include fs14($black);
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 2px;
+    @include mq() {
+      font-size: 18px;
+    }
+  }
+  &__sub2 {
+    display: block;
+    text-align: center;
+  }
+  &__heading-3 {
+    @include fs21();
+  }
+  &__text {
+    @include fs14();
+    line-height: 2.2;
+  }
+  @include mq() {
+
+    &__2col {
+      width: 50%;
+      height: 100%;
+    }
+    &--wrapper-02 {
+      padding-bottom: 0;
+      margin-bottom: -30px;
+    }
+    &__inner {
+      position: relative;
+      padding: 10%;
+      &--mini {
+       padding: 50px;
+      }
+    }
+    &__border {
+      justify-content: center;
+      // padding: 52px 0;
+      text-align: start;
+    }
+  }
+  &--contact {
+    .section__heading-2 {
+      @include fs35;
+      margin-bottom: 10px;
+      line-height: 1;
+      @include mq() {
+        font-size: 44px;
+        margin-right: 60px;
+      }
+    }
+    .section-sub {
+      @include fs14;
+    }
+    .flex-col-fixed {
+      display: flex;
+      flex-direction: column;
+      @include mq() {
+        align-items: left;
+      }
+    }
+    .button {
+      @include fs13-fixed($blue);
+      padding: 17.5px 25px;
+      @include mq() {
+        width: 370px;
+        &:hover {
+          color: #fff;
+        }
+      }
+      &::after {
+        right: 5px;
+        top: 20px;
+        @include mq() {
+          top: static;
+          right: 10px;
+        }
+      }
+    }
+  }
+  &-sustainability {
+    .section__inner  {
+      padding: 45px 30px;
+      @include mq() {
+        padding: 45px 37.5px;
+      }
+    }
+  }
+  &-business {
+    .section__inner {
+      margin: 0 30px;
+      @include mq() {
+        margin: 0;
+      }
+    }
+  }
+  &-business-box {
+    .img-back {
+      height: 500px;
+      @include mq() {
+        height: 600px;
+      }
+    }
+  }
+}

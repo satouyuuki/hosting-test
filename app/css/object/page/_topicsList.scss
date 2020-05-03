@@ -1,0 +1,13 @@
+.topics-list {
+  width: calc(670/750*100%);
+  margin: 0 auto;
+  @include mq() {
+    width: calc(1040/1440*100%);
+  }
+  .post-catselect {
+    @include mq() {
+      display: none;
+    }
+  }
+}
+

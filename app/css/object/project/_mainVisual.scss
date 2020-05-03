@@ -1,0 +1,31 @@
+.main-visual {
+  position: absolute;
+  width: 100%;
+  height: 665px;
+  background-image: url('../assets/images/main_01-sp.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, .4);
+  background-blend-mode: darken;
+  z-index: -1;
+
+  &__heading {
+    @include fs22-main();
+    writing-mode: vertical-rl;
+    letter-spacing: .1em;
+  }
+  @include mq() {
+    height: 870px;
+    background-image: url('../assets/images/main_01.png');
+    &__heading {
+      margin-top: 74px;
+    }
+  }
+}
+.main-visual-wrap {
+  height: 665px;
+  @include mq() {
+    height: 870px;
+  }
+}

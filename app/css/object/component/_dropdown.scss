@@ -1,0 +1,26 @@
+.dropdown {
+  width: 100%;
+  display: none;
+  background: $blue;
+  padding: 60px 0;
+  &__heading {
+    @include fs48-fixed();
+    font-family:$maven;
+    text-align: center;
+  }
+  &__sub {
+    @include fs16-fixed();
+    display: block;
+    text-align: center;
+    position: relative;
+    right: 20px;
+  }
+  &__link {
+    @include fs14-fixed();
+    padding: 0 60px;
+    border-left: 1px solid $white;
+    &:last-child {
+      border-right: 1px solid $white;
+    }
+  }
+}
