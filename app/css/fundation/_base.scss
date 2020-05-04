@@ -1,5 +1,10 @@
+@font-face {
+  font-family: "notoSansCjkJpMidium";
+  src: url('../assets/fonts/noto-sans-cjk-jp-midium.woff') format("woff");
+}
+
 body {
-  font-family: 'Noto Sans JP', 'Montserrat';
+  font-family: 'notoSansCjkJpMidium', 'Noto Sans JP', 'Montserrat';
   &.active {
     overflow: hidden;
   }
