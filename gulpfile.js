@@ -1,9 +1,12 @@
-const {src, dest, task, watch, series, parallel} = require("gulp");
+const {lastRun, src, dest, task, watch, series, parallel} = require("gulp");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const browserSync = require("browser-sync").create();
 const plumber = require("gulp-plumber");
 const babel = require("gulp-babel");
+const imagemin = require('gulp-imagemin');
+const mozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant');
 
 const styleSRC = "./app/css/**/*.scss";
 const styleURL = "./dist/css/";
@@ -15,6 +18,20 @@ const imgSRC = "./app/assets/images/**/*";
 const imgURL = "./dist/assets/images/";
 const fontsSRC = "./app/assets/fonts/**/*";
 const fontsURL = "./dist/assets/fonts/";
+
+const imageminOption = [
+  pngquant({
+    quality: [0.7, 0.85],
+  }),
+  mozjpeg({
+    quality: 85,
+  }),
+  imagemin.gifsicle(),
+  imagemin.optipng(),
+  imagemin.svgo({
+    removeViewBox: false,
+  }),
+];
 
 // const styleSRC = "./app/css/**/*.scss";
 // const imgSRC = "./app/assets/images/**/*.*";
@@ -65,8 +82,13 @@ function triggerPlumber(src_file, url_file) {
     .pipe(dest(url_file));
 };
 
-function images() {
-  return triggerPlumber(imgSRC, imgURL);
+function images(done) {
+  src(imgSRC, {
+    since: lastRun(images),
+  })
+    .pipe(imagemin(imageminOption))
+    .pipe(dest(imgURL));
+  done();
 }
 
 function fonts() {

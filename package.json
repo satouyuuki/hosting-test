@@ -14,7 +14,10 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0"
   }
 }
