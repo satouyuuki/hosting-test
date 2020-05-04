@@ -3,8 +3,9 @@ const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const browserSync = require("browser-sync").create();
 const plumber = require("gulp-plumber");
+const babel = require("gulp-babel");
 
-const styleSRC = "./app/css/style.scss";
+const styleSRC = "./app/css/**/*.scss";
 const styleURL = "./dist/css/";
 const htmlSRC = "./app/*.html";
 const htmlURL = "./dist/";
@@ -34,8 +35,18 @@ function reload (done) {
   done();
 }
 
+function js(done) {
+  src(jsSRC)
+    .pipe(babel({
+      presets: ['@babel/preset-env']
+    }))
+    .pipe(plumber())
+    .pipe(dest(jsURL));
+  done();
+}
+
 function css(done) {
-  src([styleSRC])
+  src(styleSRC)
     .pipe(sass({
       errLogToConsole: true,
       outputStyle: "expanded"
@@ -66,9 +77,6 @@ function html() {
   return triggerPlumber(htmlSRC, htmlURL);
 }
 
-function js() {
-  return triggerPlumber(jsSRC, jsURL);
-}
 
 function watch_files() {
   watch(styleSRC, series(css, reload));

@@ -11,7 +11,7 @@
 
   &::after {
     content: '';
-    background-image: url('../assets/images/white_arrow.png');
+    // background-image: url('../assets/images/white_arrow.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +27,7 @@
     background: $white;
     color: $blue;
     &::after {
-      background-image: url('../assets/images/blue_arrow.png');
+      // background-image: url('../assets/images/blue_arrow.png');
     }
   }
   &--reverse {
@@ -38,7 +38,7 @@
       background: $blue;
       color: $white;
       &::after {
-        background-image: url('../assets/images/white_arrow.png');
+        // background-image: url('../assets/images/white_arrow.png');
       }
     }
   }

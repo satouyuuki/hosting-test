@@ -1,3 +1,4 @@
+console.log('hell3');
 $(() => {
   $(document).ready(() => {
     const topBtn = $('.top-scroll');
